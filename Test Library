@@ -1,0 +1,16 @@
+```jsx
+import React from 'react';
+import { render } from '@testing-library/react';
+import Project from './Project';
+
+describe('Project Component', () => {
+  test('renders project title and description', () => {
+    const { getByText } = render(<Project />);
+    
+    const titleElement = getByText('React Task Manager');
+    const descriptionElement = getByText('This is a project built using React JS.');
+    
+    expect(titleElement).toBeInTheDocument();
+    expect(descriptionElement).toBeInTheDocument();
+  });
+});
